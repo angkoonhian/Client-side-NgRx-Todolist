@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-xs-12" style="background-color: azure; padding: 30px;
+    opacity: 0.9; border-radius: 10%;">
+      <form [formGroup]="TodoForm" (ngSubmit)="onSubmit(TodoForm)">
+        <mat-form-field appearance="fill">
+            <mat-label>name</mat-label>
+            <input 
+            matInput type="text" 
+            required name="name" 
+            formControlName="name" 
+            placeholder="name"
+            style="height: 20px;">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Category</mat-label>
+            <input 
+            matInput type="text" 
+            required name="Category" 
+            formControlName="Category"
+            placeholder="Category"
+            style="height: 20px;">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Details</mat-label>
+            <input 
+            matInput type="textarea" 
+            required name="Details" 
+            formControlName="Details" 
+            placeholder="Details"
+            style="size: 40;">
+        </mat-form-field>
+        <br>
+            <input
+            type="file"
+            name="Image" formControlName="Image"
+            placeholder="Image"
+            style="height: 10px; padding-bottom: 50px;"
+            (change) = "fileChanged($event)">
+        <div class="row justify-content-around">
+          <div class="row col-xs-12">
+            <button mat-raised-button
+              class="btn btn-success"
+              type="submit"
+              [disabled]="!TodoForm.valid"
+              >Update</button>
+          </div>
+          <div class="row col-xs-12">
+            <button mat-raised-button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

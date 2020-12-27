@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+  <div class="col justify-content-center" style="text-align: center; padding-bottom: 20px;">
+    <button mat-raised-button (click)="addTodo()">
+      Add Todo!
+    </button>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="row col justify-content-around" style="text-align: center;">
+    <app-todo-edit></app-todo-edit>
+  </div>
+</div>
+<div class="row justify-content-center">
+    <div class="row col-xl-3 col-lg-4 col-md-6 col-xs-10
+    justify-content-around" style="padding-top: 20px; padding-bottom: 20px;"
+    *ngFor="let Todo of (Todos | async).Todos; let i = index">
+    <mat-card class="example-card" style="padding: 0px; width: 300px;">
+        <img mat-card-image src={{Todo.image}} alt="Photo of a Shiba Inu"
+        style="margin: 0px;">
+        <div class="row justify-content-center" style="padding-top: 10px;">
+          <h4 style="align-content: center;">Title: {{Todo.name}}</h4>
+        </div>
+        <div class="row justify-content-center">
+          <mat-card-subtitle style="text-align: center;">Category: {{Todo.category}}</mat-card-subtitle>
+        </div>
+        <mat-card-content>
+          <div class="row justify-content-center">
+            <p style="align-content: center;">
+              - {{ Todo.details }}
+            </p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions style="padding: 10px; align-content: center;">
+          <div class="row justify-content-around" style="padding-bottom:10px;">
+            <button mat-raised-button (click)="onEditTodo(i)" color="primary">EDIT</button>
+            <button mat-raised-button (click)="deleteTodo(i)" class="btn-success">COMPLETED</button>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+</div>

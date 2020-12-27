@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "todolist-de606"
+  },
+  "targets": {
+    "todolist-de606": {
+      "hosting": {
+        "todolist": [
+          "todolist-de606"
+        ]
+      }
+    }
+  }
+}

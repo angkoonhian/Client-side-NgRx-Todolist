@@ -1,0 +1,30 @@
+<div class="row justify-content-center" style="padding-top: 50px; padding-bottom: 600px;">
+    <div *ngIf="isLoading">
+        <app-loading-spinner></app-loading-spinner>
+    </div>
+    <div class="col-xs-12" *ngIf="!isLoading" style="background-color: azure;
+    padding-bottom: 40px; padding-top: 20px; opacity: 0.8; border-radius: 20%;">
+        <h2 style="text-align: center;">LOGIN</h2>
+        <form (ngSubmit)="SignIn(LoginForm)" [formGroup]="LoginForm" class="text-center pl-5 pr-5" #authForm="ngForm" style="padding-top:0px">
+            <mat-form-field appearance="fill">
+                <mat-label>Username</mat-label>
+                <input matInput type="text" required name="Username" formControlName="Username" placeholder="Username"
+                style="height: 20px;">
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" required name="Password" formControlName="Password" placeholder="Password"
+                style="height: 20px;">
+            </mat-form-field>
+            <br>
+            <button mat-raised-button color="primary" block="true" type="submit"
+            [disabled]="!authForm.valid" mat-dialog-close style="width: 100%; margin-bottom: 20px;">
+              Sign in
+            </button>
+            <br>
+            <button mat-raised-button color="primary" mat-dialog-close (click)="goToRegister()"
+            style="width: 100%">Not a user yet? Register</button>
+          </form>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="row justify-content-center" style="padding-top: 50px; padding-bottom: 600px;">
+    <div class="col-xs-12" style="background-color: azure;
+    padding-bottom: 40px; padding-top: 20px; opacity: 0.8; border-radius: 20%;">
+        <h2 style="text-align: center;">REGISTER</h2>
+        <form (ngSubmit)="Register(RegisterForm)" [formGroup]="RegisterForm" class="text-center pl-5 pr-5" #authForm="ngForm" style="padding-top:0px">
+            <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" required name="Email" formControlName="Email" placeholder="Email"
+                style="height: 20px;">
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput type="text" required name="Password" formControlName="Password" placeholder="Password"
+                style="height: 20px;">
+            </mat-form-field>
+            <br>
+            <button mat-raised-button color="primary" block="true" type="submit" mat-dialog-close style="width: 100%; margin-bottom: 20px;">
+              Register
+            </button>
+            <br>
+            <button mat-raised-button color="primary" mat-dialog-close (click)="goToLogin()"
+            style="width: 100%">Already a user? Login</button>
+          </form>
+    </div>
+</div>

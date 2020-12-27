@@ -1,0 +1,7 @@
+<nav navbar class="navbar navbar-expand-xl navbar-dark bg-dark justify-content-around"
+style="padding-bottom: 30px; padding-top: 30px; color: white;">  
+        <h1>Our ToDo List!</h1>
+        <button mat-raised-button color="warning" *ngIf="isAuthenticated" (click)="onLogout()">
+                Logout
+        </button>
+</nav>
