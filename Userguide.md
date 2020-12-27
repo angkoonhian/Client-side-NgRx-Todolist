@@ -9,7 +9,7 @@
 <p>Start by pressing on Add Todo button at the top. A default card with pre filled data is created that is open to editing.</p>
 <h2><ul>2.4 Editing Todos</ul></h2>
 <p>Click on the edit button on the existing cards (Todos), the form above will be automatically filled up and linked to the Todo card.
-Update it by simply replacing the values within it. Images can also be re uploaded.</p>
+Update it by simply replacing the values within it. Todos can only be updated if an image is uploaded to the edited form.</p>
 <h2><ul>2.4 Deleting Todos</ul></h2>
 <p>Simply click on the 'Completed' button to complete the task and remove the Todo card.</p>
 <h1>Features</h1>
