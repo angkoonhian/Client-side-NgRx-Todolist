@@ -3,11 +3,11 @@ import { Injectable } from "@angular/core";
 import { throwError, BehaviorSubject } from "rxjs";
 import { catchError, tap } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
-import * as AuthActions from '../auth/store/auth.action';
-import * as fromApp from '../store/app.reducer';
+import * as AuthActions from './../auth/store/auth.action';
+import * as fromApp from './../store/app.reducer';
 
 // User model imported from auth component to store user data.
-import { User } from "../auth/user.model";
+import { User } from "./../auth/user.model";
 import { Router } from "@angular/router";
 
 // Define fields for return data type when signing up.

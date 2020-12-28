@@ -2,12 +2,11 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Store } from '@ngrx/store';
 
-import { Todos } from '../../shared-components/todos.model';
-import * as TodoActions from '../store/todo.actions';
-import * as fromApp from '../../store/app.reducer';
+import { Todos } from './../../shared-components/todos.model';
+import * as TodoActions from './../store/todo.actions';
+import * as fromApp from './../../store/app.reducer';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, of } from 'rxjs';
-import { forEach } from 'jszip';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-todo',

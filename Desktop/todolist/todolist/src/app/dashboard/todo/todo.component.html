@@ -1,4 +1,4 @@
-<div class="row justify-content-center">
+<div class="row justify-content-center" >
   <div class="col justify-content-center" style="text-align: center; padding-bottom: 20px;">
     <button mat-raised-button (click)="addTodo()">
       Add Todo!
@@ -10,7 +10,7 @@
     <app-todo-edit></app-todo-edit>
   </div>
 </div>
-<div class="row justify-content-center">
+<div class="row justify-content-center" style="padding-bottom: 500px;">
     <div class="row col-xl-3 col-lg-4 col-md-6 col-xs-10
     justify-content-around" style="padding-top: 20px; padding-bottom: 20px;"
     *ngFor="let Todo of (Todos | async).Todos; let i = index">

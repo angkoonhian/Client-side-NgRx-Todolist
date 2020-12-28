@@ -1,7 +1,7 @@
 import { ActionReducerMap } from '@ngrx/store';
 
-import * as fromTodos from '../dashboard/store/todo.reducer';
-import * as fromAuth from '../auth/store/auth.reducer';
+import * as fromTodos from './../dashboard/store/todo.reducer';
+import * as fromAuth from './../auth/store/auth.reducer';
 
 export interface AppState {
     Todos: fromTodos.State;

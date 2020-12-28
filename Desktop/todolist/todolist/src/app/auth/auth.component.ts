@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../services/auth.service';
 
 import { Store } from '@ngrx/store'
-import * as fromApp from '../store/app.reducer';
+import * as fromApp from './../store/app.reducer';
 import * as AuthActions from './store/auth.action';
 import { LoadingSpinnerComponent } from '../shared-components/loading-spinner.component';
 import { Subscription } from 'rxjs';

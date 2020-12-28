@@ -1,4 +1,4 @@
-import { User } from '../user.model';
+import { User } from './../user.model';
 import * as AuthActions from './auth.action';
 
 export interface State {
@@ -25,6 +25,7 @@ export function authReducer(state = initialState, action: AuthActions.AuthAction
                     user: user
                 }
         case AuthActions.LOGOUT:
+            console.log("logout");
             // Once logout, revert state to one with no user.
             return {
                 ...state,

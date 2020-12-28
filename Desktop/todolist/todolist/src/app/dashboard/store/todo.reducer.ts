@@ -1,4 +1,4 @@
-import { Todos } from '../../shared-components/todos.model';
+import { Todos } from './../../shared-components/todos.model';
 import * as todos from './todo.actions';
 
 export interface State {
@@ -12,6 +12,9 @@ export interface State {
 *  There is no editing going on thus it is null and -1.
 */ 
 const initialState: State = JSON.parse(localStorage.getItem('todo'));
+if (initialState.Todos.length == 0) {
+    initialState.Todos = [];
+}
 
 export function TodoReducer(
     state: State = initialState,
@@ -22,6 +25,7 @@ export function TodoReducer(
         // Did not separate add text and add image since can be grouped
         // under a single add-todo state. separating it is redundant.
         case todos.Add_todo:
+            console.log("adding");
             return {
                 ...state,
                 Todos: [...state.Todos, action.payload]

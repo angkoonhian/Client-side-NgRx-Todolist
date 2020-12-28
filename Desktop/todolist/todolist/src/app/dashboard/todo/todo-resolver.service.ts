@@ -8,9 +8,9 @@ import { Store } from '@ngrx/store';
 import { Actions, ofType } from '@ngrx/effects';
 import { take } from 'rxjs/operators';
 
-import { Todos } from '../../shared-components/todos.model';
-import * as fromApp from '../../store/app.reducer';
-import * as TodoActions from '../store/todo.actions';
+import { Todos } from './../../shared-components/todos.model';
+import * as fromApp from './../../store/app.reducer';
+import * as TodoActions from './../store/todo.actions';
 
 @Injectable({ providedIn: 'root'})
 

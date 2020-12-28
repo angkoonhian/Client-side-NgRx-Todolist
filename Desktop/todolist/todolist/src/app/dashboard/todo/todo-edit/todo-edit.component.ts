@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 
-import { Todos } from '../../../shared-components/todos.model';
-import * as TodoActions from '../../store/todo.actions';
-import * as fromApp from '../../../store/app.reducer';
+import { Todos } from './../../../shared-components/todos.model';
+import * as TodoActions from './../../store/todo.actions';
+import * as fromApp from './../../../store/app.reducer';
 import { file } from 'jszip';
 
 @Component({
@@ -63,7 +63,6 @@ export class TodoEditComponent implements OnInit, OnDestroy {
     //Function to handle submission of Image file
     fileChanged(e) {
         this.Image = e.target.files[0];
-        console.log(this.Image);
     }
 
     // submit function to dispatch new updateTodo state with form values.

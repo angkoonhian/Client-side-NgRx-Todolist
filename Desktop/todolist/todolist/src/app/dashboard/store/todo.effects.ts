@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { switchMap, map } from 'rxjs/operators';
 
 import * as TodoActions from './todo.actions';
-import { Todos } from '../../shared-components/todos.model';
+import { Todos } from './../../shared-components/todos.model';
 
 @Injectable()
 

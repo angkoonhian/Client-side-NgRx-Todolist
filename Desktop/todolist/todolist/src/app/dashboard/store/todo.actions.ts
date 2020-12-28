@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 
-import { Todos } from '../../shared-components/todos.model';
+import { Todos } from './../../shared-components/todos.model';
 
 // Basic states required for this Todo part of this application
 

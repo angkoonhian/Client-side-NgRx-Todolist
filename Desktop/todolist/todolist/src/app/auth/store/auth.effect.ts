@@ -4,10 +4,10 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { catchError, switchMap, map, tap } from 'rxjs/operators';
 
 import * as AuthActions from './auth.action';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from './../../services/auth.service';
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { User } from '../user.model';
+import { User } from './../user.model';
 
 // Define fields for return data type when signing up.
 export interface AuthResponseService {

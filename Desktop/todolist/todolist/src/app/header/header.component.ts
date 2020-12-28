@@ -3,9 +3,9 @@ import { Store } from '@ngrx/store'
 import { Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import * as fromApp from '../store/app.reducer';
-import * as AuthActions from '../auth/store/auth.action';
-import { AuthService } from '../services/auth.service';
+import * as fromApp from './../store/app.reducer';
+import * as AuthActions from './../auth/store/auth.action';
+import { AuthService } from './../services/auth.service';
 
 @Component({
   selector: 'app-header',
