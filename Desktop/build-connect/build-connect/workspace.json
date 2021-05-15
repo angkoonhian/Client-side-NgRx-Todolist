@@ -1,0 +1,175 @@
+{
+  "version": 2,
+  "cli": {
+    "defaultCollection": "@nrwl/react"
+  },
+  "defaultProject": "build-connect",
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "style": "css",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "css"
+      },
+      "library": {
+        "style": "css",
+        "linter": "eslint"
+      }
+    }
+  },
+  "projects": {
+    "build-connect": {
+      "root": "apps/build-connect",
+      "sourceRoot": "apps/build-connect/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/build-connect",
+            "index": "apps/build-connect/src/index.html",
+            "main": "apps/build-connect/src/main.tsx",
+            "polyfills": "apps/build-connect/src/polyfills.ts",
+            "tsConfig": "apps/build-connect/tsconfig.app.json",
+            "assets": [
+              "apps/build-connect/src/favicon.ico",
+              "apps/build-connect/src/assets"
+            ],
+            "styles": ["apps/build-connect/src/styles.css"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/build-connect/src/environments/environment.ts",
+                  "with": "apps/build-connect/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "build-connect:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "build-connect:build:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/build-connect/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/build-connect"],
+          "options": {
+            "jestConfig": "apps/build-connect/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "build-connect-e2e": {
+      "root": "apps/build-connect-e2e",
+      "sourceRoot": "apps/build-connect-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/build-connect-e2e/cypress.json",
+            "tsConfig": "apps/build-connect-e2e/tsconfig.e2e.json",
+            "devServerTarget": "build-connect:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "build-connect:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/build-connect-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "build-connect-backend": {
+      "root": "apps/build-connect-backend",
+      "sourceRoot": "apps\\build-connect-backend\\src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/build-connect-backend",
+            "main": "apps/build-connect-backend/src/main.ts",
+            "tsConfig": "apps/build-connect-backend/tsconfig.app.json",
+            "assets": ["apps/build-connect-backend/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/build-connect-backend/src/environments/environment.ts",
+                  "with": "apps/build-connect-backend/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "build-connect-backend:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/build-connect-backend/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/build-connect-backend"],
+          "options": {
+            "jestConfig": "apps/build-connect-backend/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  }
+}

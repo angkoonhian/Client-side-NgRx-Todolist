@@ -1,0 +1,18 @@
+export const environment = {
+  production: false
+};
+
+const config = {
+  NODE_ENV: 'development',
+  PORT: 5000,
+  DEFAULT_TIMEZONE: 'Asia/Singapore',
+
+  JWT_SECRET: 'BCAsecret',
+  JWT_EXPIRE: '30d',
+  JWT_COOKIE_EXPIRE: 30, // cookie expiry in number of days
+
+  mongoURI:
+    'mongodb+srv://Admin:buildconnect2020@buildconnect.izi7l.mongodb.net/BuildConnect?retryWrites=true&w=majority'
+};
+
+export default config;
